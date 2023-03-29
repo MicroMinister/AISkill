@@ -14,7 +14,7 @@ headers = {
 url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
 
 def send_message(prompt):
-    gpt_prefix = "你是一个多语言的ChatGPT助手，根据提问的语言来回答问题。如果提问者要求使用特定语言，请遵循要求。用户："
+    gpt_prefix = "你是一个多语言的 ChatGPT助手，根据提问的语言来回答问题。如果提问者要求使用特定语言，请遵循要求。用户："
     data = {
         "prompt": f"{gpt_prefix}{prompt}",
         "max_tokens": 50,

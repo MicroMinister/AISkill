@@ -11,7 +11,7 @@ class ChatGPT(QWidget):
         super().__init__()
         self.api_key = "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"
         self.url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
-        self.gpt_prefix = "你是一个多语言的ChatGPT助手，根据提问的语言来回答问题。如果提问者要求使用特定语言，请遵循要求。用户："
+        self.gpt_prefix = "你是 一个多语言的ChatGPT助手，根据提问的语言来回答问题。如果提问者要求使用特定语言，请遵循要求。用户："
         self.initUI()
 
     def initUI(self):

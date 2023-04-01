@@ -18,18 +18,6 @@ class ArticleDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ArticleSerializer
     permission_classes = [AllowAny]
 
-
-class ArticleListCreateView(generics.ListCreateAPIView):
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
-    permission_classes = [AllowAny]
-
-
-class ArticleDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
-    permission_classes = [AllowAny]
-
 class CommentListCreateView(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
@@ -58,4 +46,3 @@ def api_root(request, format=None):
         'articles': reverse('article-list-create', request=request, format=format),
         'comments': reverse('comment-list-create', request=request, format=format),
     })
-

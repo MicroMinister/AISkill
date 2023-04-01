@@ -20,12 +20,7 @@ class ArticleSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'content', 'pub_date', 'author', 'category']
 
     def create(self, validated_data):
-        author = validated_data.pop('author')
-        category = validated_data.pop('category')
-        user = CustomUser.objects.get(id=author.id)
-        category_obj = Category.objects.get(id=category.id)
-        article = Article.objects.create(author=user, category=category_obj, **validated_data)
-        return article
+        return Article.objects.create(**validated_data)
 
 class CommentSerializer(serializers.ModelSerializer):
     author = CustomUserSerializer()
